@@ -1,0 +1,44 @@
+body{
+    background-color: #e0e0e0; 
+}
+
+.nav-links .link{
+    color: white;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    height: 100%;
+    color: black;
+    padding-inline: 30px;
+    align-items: center;
+
+    li{
+        margin: 0;
+    }
+}
+
+#linkMassa2{
+    background-color: rgb(96, 159, 201);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 250ms;
+    color: black;
+    
+    &:hover{
+        background-color: rgba(96, 159, 201, 0.685);
+    }
+}
+
+.img-voltar{
+    height: 30px;
+    aspect-ratio: 1 / 1;
+
+}
+
+.container-jogos{
+    list-style: none;
+}

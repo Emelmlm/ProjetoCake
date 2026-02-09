@@ -1,0 +1,21 @@
+
+    .topo{
+        background-color: #d0d0d0; 
+        padding: 10px;
+        height: 20vh;
+        background-image: url("../img/imagemfundo.jpg");
+        background-position: 0 -100px;
+    }
+    .corpo{
+        padding-block: 60px;
+        max-width: 80vw;
+        margin: auto;
+    }
+    .rodape{
+        background-color: #d0d0d0; 
+        padding: 50px;
+        height: 20vh;
+        background-image: url("../img/imagemfundo.jpg");
+        background-position: 0 800px;
+
+    }
