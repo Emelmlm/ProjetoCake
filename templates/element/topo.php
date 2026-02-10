@@ -1,7 +1,7 @@
 <div class="topo">
     <ul class="nav-links">
-        <li><a href="#" class="link">homie</a></li>
-        <li><a href="#" class="link">bout</a></li>
+        <li><?= $this->html->link("homie", "/", ["id" => "homie", "class" => "link"]); ?></li>
+        <li><a href="sobre" class="link">bout</a></li>
         <li><a href="#" class="link">aura</a></li>
     </ul>
 </div>
