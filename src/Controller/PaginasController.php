@@ -30,4 +30,7 @@ class PaginasController extends AppController
     public function topJogos(){
         
     }
+    public function topmusicas(){
+        
+    }
 }    

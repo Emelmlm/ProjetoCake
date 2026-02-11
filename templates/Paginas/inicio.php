@@ -13,8 +13,8 @@
         <div class="tops">
             <h2>Top 10 melhores Músicas</h2>
             <p>Lista das 10 melhores músicas de todas as décadas seila</p>
-            <img src="img/gatomusga.webp" class="img-link" alt="Foto de sanduicheira">
-            <a href="topJogos" id="linkMassa" class="link-massa">Conferir</a>
+            <img src="img/magago.png" class="img-link" alt="um macaco">
+            <a href="topmusicas" id="linkMassa" class="link-massa">Conferir</a>
         </div>
     </div>
 

@@ -63,3 +63,19 @@ body {
 .container-jogos {
     list-style: none;
 }
+
+.lista-musica{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 60px;
+
+    img{
+        height: 150px;
+        aspect-ratio: 1 / 1;
+
+    }
+
+}
