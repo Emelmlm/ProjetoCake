@@ -21,11 +21,11 @@
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        Top 10 jogos top de 10 anos decada
+        Top 10 
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake']) ?>
+    <!-- <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?> -->
     <?= $this->Html->css(['site']) ?>
 
     <?= $this->fetch('meta') ?>

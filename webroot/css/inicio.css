@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+:root {
+    font-family: "Inter";
+}
+
 body {
     background-color: #e0e0e0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.titulo-cursivo {
+    font-family: "Patrick Hand SC";
+    font-size: 60px;
 }
 
 .nav-links .link {
@@ -21,12 +39,20 @@ body {
 }
 
 
-.tops {
+.lista-tops {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 30px;
+    justify-content: center;
+    gap: 80px;
 
+    .tops {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 .img-link {
@@ -41,41 +67,88 @@ body {
 
 }
 
-#linkMassa2 {
-    background-color: rgb(96, 159, 201);
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 250ms;
-    color: black;
 
-    &:hover {
-        background-color: rgba(96, 159, 201, 0.685);
+#linkMassa1 {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    color: black;
+    margin-top: 10px;
+    border: 1px, solid rgb(96, 159, 201);
+
+ 
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: rgb(96, 159, 201);
+        transition: all .3s;
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    &:hover { 
+        &:before {
+            width: 100%;
+        }
     }
 }
 
-.img-voltar {
-    height: 30px;
-    aspect-ratio: 1 / 1;
+    #linkMassa2 {
+        background-color: rgb(96, 159, 201);
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: 500ms;
+        color: black;
+        margin-top: 10px;
 
-}
 
-.container-jogos {
-    list-style: none;
-}
+        &:hover {
+            background-color: rgba(96, 159, 201, 0.685);
+            transform: rotate(360deg);
+        }
+    }
 
-.lista-musica{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    gap: 60px;
-
-    img{
-        height: 150px;
+    .img-voltar {
+        height: 30px;
         aspect-ratio: 1 / 1;
 
     }
 
-}
+    .container-jogos {
+        list-style: none;
+    }
+
+    .lista-musica {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        gap: 10px;
+
+        .item-musica {
+            position: relative;
+            top: 0;
+            transition: 250ms;
+
+            &:hover {
+                top: -10px;
+            }
+        }
+
+        img {
+            height: 150px;
+            aspect-ratio: 1 / 1;
+            border-radius: 8px;
+        }
+
+
+
+    }

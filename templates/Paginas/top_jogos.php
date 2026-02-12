@@ -4,7 +4,14 @@
     <h1>Top 10 melhores jogos do mundo</h1>
     <p>Lista de melhores jogos da última decada na minha opnião</p>
     <ul class="container-jogos">
+        <?php foreach($games as $game){  ?>
         <li>
+            <h2><?= $game->title ?></h2>
+            <p><?= $game->description ?></p>
+        </li>
+        <?php } ?>
+       
+        <!-- <li>
             <h2>1 - Baldurs Gate 3</h2>
             <p>O melhor jogo do mundo</p>
         </li>
@@ -43,7 +50,7 @@
         <li>
             <h2>10 - Roblox</h2>
             <p>pq e muito legal tipo tem vários mini jogos em um jogao e ai da pra jogar com os amigos, por exemplo: steal a brainrot onde voce rouba varios tung tung sahurs</p>
-        </li>
+        </li> -->
     </ul>
 
      <?= $this->html->link(
