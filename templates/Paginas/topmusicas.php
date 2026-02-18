@@ -1,10 +1,11 @@
 <?= $this->html->css("inicio") ?>
+<?= $this->html->script("inicio") ?>
 
 <main class="corpo">
     <h1>Minhas músicas favoritas</h1>
     <ul class="lista-musica">
         <?php foreach($songs as $song): ?>
-            <li>
+            <li class="item-musica">
                 <?= $this->Html->image($song->image ?$song->image :"MAGAGO.png", ["alt"=> "capa". $song->title]) ?>
                 <p><?= $song->title ?></p>
             </li>

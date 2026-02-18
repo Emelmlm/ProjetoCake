@@ -1,16 +1,34 @@
 <?= $this->html->css("inicio") ?>
+<?= $this->html->script("inicio") ?>
 
 <main class="corpo">
     <h1>Top 10 melhores jogos do mundo</h1>
     <p>Lista de melhores jogos da última decada na minha opnião</p>
     <ul class="container-jogos">
-        <?php foreach($games as $game){  ?>
-        <li>
-            <h2><?= $game->title ?></h2>
-            <p><?= $game->description ?></p>
-        </li>
+        <?php foreach ($games as $game) {  ?>
+            <li>
+                <h2><?= $game->title ?></h2>
+                <p><?= $game->description ?></p>
+            </li>
         <?php } ?>
-       
+
+
+        <!-- <?php foreach ($games as $game) { ?>
+            <li>
+                <a href="#modal<?= $game->id ?>">
+                    <h2><?= $game->title ?></h2>
+                </a>
+                <p><?= $game->description ?></p>
+
+                <div id="modal<?= $game->id ?>" class="modal">
+                    <div class="modal-content">
+                        <a href="#" class="closeBtn">&times;</a>
+                        <p><?= $game->description ?></p>
+                    </div>
+                </div>
+            </li>
+        <?php } ?> -->
+
         <!-- <li>
             <h2>1 - Baldurs Gate 3</h2>
             <p>O melhor jogo do mundo</p>
@@ -53,10 +71,9 @@
         </li> -->
     </ul>
 
-     <?= $this->html->link(
+    <?= $this->html->link(
         $this->html->image("voltar.png", ["class" => "img-voltar"]),
-         "/",
-        ["class" => "link-voltar", "escape" => false])?>
+        "/",
+        ["class" => "link-voltar", "escape" => false]
+    ) ?>
 </main>
-
-<?= $this->html->script("inicio") ?>

@@ -41,25 +41,41 @@ a {
 
 .lista-tops {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 30px;
     justify-content: center;
     gap: 80px;
 
+
     .tops {
+        width: 300px;
+
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        background-color: #cfcfcf;
+        border-radius: 30px;
+        padding: 20px;
+        gap: 8px;
+
+        .img-link {
+            height: 250px;
+            aspect-ratio: 1 / 1;
+            border-radius: 10px;
+        }
+
+        h2,
+        p {
+            text-align: justify;
+            margin: 0;
+
+        }
     }
 }
 
-.img-link {
-    height: 250px;
-    aspect-ratio: 1 / 1;
-    border-radius: 10px;
-}
+
 
 .link-massa {
     text-decoration: underline;
@@ -78,7 +94,7 @@ a {
     margin-top: 10px;
     border: 1px, solid rgb(96, 159, 201);
 
- 
+
     &::before {
         content: '';
         position: absolute;
@@ -92,63 +108,102 @@ a {
         z-index: -1;
     }
 
-    &:hover { 
+    &:hover {
         &:before {
             width: 100%;
         }
     }
 }
 
-    #linkMassa2 {
-        background-color: rgb(96, 159, 201);
-        padding: 10px 20px;
-        border-radius: 10px;
-        text-decoration: none;
-        transition: 500ms;
-        color: black;
-        margin-top: 10px;
+#linkMassa2 {
+    background-color: #7AB2B2;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 500ms;
+    color: black;
+    margin-top: 10px;
 
+    &:hover {
+        transform: rotate(360deg);
+    }
+}
+
+.img-voltar {
+    height: 30px;
+    aspect-ratio: 1 / 1;
+
+}
+
+.container-jogos {
+    list-style-type: decimal;
+    
+    a {
+        color: black;
+        cursor: pointer;
+        transition: .3s;
 
         &:hover {
-            background-color: rgba(96, 159, 201, 0.685);
-            transform: rotate(360deg);
+            color: #09637E;
+        }
+    }
+}
+
+.lista-musica {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+    list-style: none;
+
+    .item-musica {
+        position: relative;
+        top: 0;
+        transition: 250ms;
+
+        &:hover {
+            top: -10px;
         }
     }
 
-    .img-voltar {
-        height: 30px;
+    img {
+        height: 150px;
         aspect-ratio: 1 / 1;
-
+        border-radius: 8px;
     }
+}
 
-    .container-jogos {
-        list-style: none;
-    }
+/* .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
 
-    .lista-musica {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        justify-content: center;
-        align-items: center;
-        padding: 30px;
-        gap: 10px;
+.modal-content {
+    background-color: #e0e0e0;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+}
 
-        .item-musica {
-            position: relative;
-            top: 0;
-            transition: 250ms;
+.closeBtn {
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+}
 
-            &:hover {
-                top: -10px;
-            }
-        }
+.modal:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
-        img {
-            height: 150px;
-            aspect-ratio: 1 / 1;
-            border-radius: 8px;
-        }
-
-
-
-    }
