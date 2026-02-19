@@ -1,10 +1,10 @@
 
     .topo{
-        background-color: #d0d0d0; 
+        background-color: #000000; 
         padding: 10px;
-        height: 20vh;
-        /* background-image: url("../img/imagemfundo.jpg"); */
-        background-position: 0 -100px;
+        height: 15vh;
+        /* background-image: url("../img/imagemfundo.jpg");
+        background-position: 0 -100px; */
     }
     .corpo{
         padding-block: 60px;
@@ -12,10 +12,11 @@
         margin: auto;
     }
     .rodape{
-        background-color: #d0d0d0; 
+        background-color: #000; 
         padding: 50px;
         height: 20vh;
         /* background-image: url("../img/imagemfundo.jpg"); */
         background-position: 0 800px;
+
 
     }

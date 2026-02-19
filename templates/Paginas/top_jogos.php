@@ -1,5 +1,6 @@
 <?= $this->html->css("inicio") ?>
-<?= $this->html->script("inicio") ?>
+<?= $this->html->css("modal") ?>
+<?= $this->html->script("inicio", ["defer" => true]) ?>
 
 <main class="corpo">
     <h1>Top 10 melhores jogos do mundo</h1>
@@ -7,10 +8,24 @@
     <ul class="container-jogos">
         <?php foreach ($games as $game) {  ?>
             <li>
-                <h2><?= $game->title ?></h2>
+                <a id="open-modal">
+                    <h2><?= $game->title ?></h2>
+                </a>
                 <p><?= $game->description ?></p>
             </li>
+            <div id="fade" class="hide"></div>
+            <div id="modal" class="hide">
+                <div class="modal-header">
+                    <h2><?= $game->title ?></h2>
+                    <button id="close-modal">Fechar</button>
+                </div>
+                <div class="modal-body">
+                    <p><?= $game->description ?></p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nemo quaerat porro maxime, aut cum voluptates earum asperiores minus vitae ipsam voluptatem sequi inventore, recusandae rerum sed corrupti obcaecati repellendus.</p>
+                </div>
+            </div>
         <?php } ?>
+
 
 
         <!-- <?php foreach ($games as $game) { ?>
