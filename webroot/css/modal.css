@@ -15,7 +15,7 @@ button{
     transition: .4s;
 }
 
-#open-modal{
+.open-modal{
     background-color: #008bff;
 }
 
@@ -23,13 +23,13 @@ button:hover{
     opacity: 1;
 }
 
-#fade, #modal{
+.fade, .modal{
     transition: .5s;
     opacity: 1;
     pointer-events: all;
 }
 
-#fade{
+.fade{
     position: fixed;
     top: 0;
     left: 0;
@@ -39,7 +39,7 @@ button:hover{
     z-index: 5;
 }
 
-#modal{
+.modal{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -66,12 +66,12 @@ button:hover{
     margin-bottom: 1rem;
 }
 
-#modal.hide,
-#fade.hide{
+.modal.hide,
+.fade.hide{
     opacity: 0;
     pointer-events: none;
 }
 
-#modal.hide{
+.modal.hide{
     top: 0;
 }

@@ -8,16 +8,16 @@
     <ul class="container-jogos">
         <?php foreach ($games as $game) {  ?>
             <li>
-                <a id="open-modal">
+                <a class="open-modal" data-modal-index="<?= $game->id?>">
                     <h2><?= $game->title ?></h2>
                 </a>
                 <p><?= $game->description ?></p>
             </li>
-            <div id="fade" class="hide"></div>
-            <div id="modal" class="hide">
+            <div id="" class="hide fade"></div>
+            <div id="modal<?= $game->id?>" class="hide modal">
                 <div class="modal-header">
                     <h2><?= $game->title ?></h2>
-                    <button id="close-modal">Fechar</button>
+                    <button class="close-modal">Fechar</button>
                 </div>
                 <div class="modal-body">
                     <p><?= $game->description ?></p>
