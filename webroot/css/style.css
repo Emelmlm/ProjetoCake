@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap");
+
+@layer demo {
+
+	/* Config */
+	:root {
+		--slide-width: 36vmin;
+		--slide-height: calc(var(--slide-width) * 1.4);
+		--gap: 2rem;
+	}
+
+	/* Basic Carousel Styles */
+	.slides {
+		list-style: none;
+		overflow-x: auto;
+		overflow-y: hidden;
+		width: 100%;
+		max-width: 1200px;
+		height: calc(var(--slide-height) + 2rem);
+		/* Altura fixa baseada nos slides + folga */
+		margin: 2rem auto;
+		white-space: nowrap;
+		background: transparent;
+		padding: 0;
+		/* Remove padding que afasta a barra */
+		touch-action: pan-x;
+
+		scroll-behavior: smooth;
+	}
+
+	/* Estilo da barra de scroll para ficar mais elegante e próxima */
+	.slides::-webkit-scrollbar {
+		height: 8px;
+	}
+
+	.slides::-webkit-scrollbar-track {
+		background: rgba(0, 0, 0, 0.05);
+		border-radius: 10px;
+	}
+
+	.slides::-webkit-scrollbar-thumb {
+		background: rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+	}
+
+	.slides::-webkit-scrollbar-thumb:hover {
+		background: rgba(0, 0, 0, 0.3);
+	}
+
+	/* Only scroll-snap when not dragging */
+	.slides:not(.dragging) {
+		scroll-snap-type: x mandatory;
+	}
+
+	.slide {
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		width: var(--slide-width);
+		height: var(--slide-height);
+		scroll-snap-align: center;
+		scroll-snap-stop: always;
+		/* Garante que o snap não pule slides */
+
+		position: relative;
+		overflow: clip;
+		/* Use clip, not hidden! */
+
+		/* Hardware acceleration */
+		transform: translate3d(0, 0, 0);
+		will-change: transform;
+	}
+
+	@keyframes adjust-image {
+		0% {
+			object-position: 100% 0;
+		}
+
+		100% {
+			object-position: 0 0;
+		}
+	}
+
+	.slide+.slide {
+		margin-left: var(--gap);
+	}
+
+	/* Lay out the slide contents */
+	.slide>a {
+		text-decoration: none;
+		mix-blend-mode: lighten;
+		background: rgb(255, 255, 255);
+		color: rgb(0, 0, 0);
+		font-size: 2rem;
+		transform: rotate(90deg) translateX(-100%);
+		transform-origin: 0% 100%;
+		bottom: 0.5rem;
+		left: 0rem;
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		text-align: center;
+		position: absolute;
+	}
+
+	.slide>a>span {
+		padding-right: 0.1rem;
+		font-size: 0.5em;
+	}
+
+	.slide>img {
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		/* Stick 'm to the right of their frame */
+		position: absolute;
+		right: 0;
+		animation: adjust-image ease-in-out both;
+		/* Mais suave que linear */
+		animation-timeline: view(x);
+		object-fit: cover;
+		object-position: 100% 0;
+		will-change: object-position;
+	}
+}

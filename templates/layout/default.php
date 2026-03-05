@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -17,14 +18,16 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        Top 10 
+        Top 10
     </title>
     <?= $this->Html->meta('icon') ?>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <!-- <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?> -->
     <?= $this->Html->css(['site']) ?>
 
@@ -32,11 +35,13 @@
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+
 <body>
     <?= $this->element('topo') ?>
 
     <?= $this->fetch('content') ?>
 
-    <?= $this-> element('rodape')?>
-</body>
+    <?= $this->element('rodape') ?>
+
+
 </html>

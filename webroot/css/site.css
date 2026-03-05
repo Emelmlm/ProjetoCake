@@ -1,5 +1,5 @@
 .topo {
-    background-color: #e0e0e0;
+    background-color: white;
     padding: 10px;
     height: 15vh;
     display: flex;
@@ -7,6 +7,7 @@
     align-items: center;
     padding: 20px 40px;
     margin: 0 auto;
+    border-bottom: 1px solid #cac8c8;
     /* background-image: url("../img/imagemfundo.jpg");
         background-position: 0 -100px; */
 }
@@ -18,11 +19,13 @@
 }
 
 .rodape {
-    background-color: #e0e0e0;
-    padding: 50px;
-    height: 20vh;
+    background-color: white;
+    padding: 10px 20px;
+    height: 12vh;
     /* background-image: url("../img/imagemfundo.jpg"); */
-    background-position: 0 800px;
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-top: 1px solid #cac8c8;
 }
