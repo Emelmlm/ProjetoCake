@@ -1,9 +1,8 @@
-
-h1{
+h1 {
     margin-bottom: 1rem;
 }
 
-button{
+button {
     padding: .6rem 1.2rem;
     background-color: #888;
     color: #fff;
@@ -15,21 +14,22 @@ button{
     transition: .4s;
 }
 
-.open-modal{
+.open-modal {
     background-color: #008bff;
 }
 
-button:hover{
+button:hover {
     opacity: 1;
 }
 
-.fade, .modal{
+.fade,
+.modal {
     transition: .5s;
     opacity: 1;
     pointer-events: all;
 }
 
-.fade{
+.fade {
     position: fixed;
     top: 0;
     left: 0;
@@ -39,7 +39,7 @@ button:hover{
     z-index: 5;
 }
 
-.modal{
+.modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -53,7 +53,7 @@ button:hover{
 
 }
 
-.modal-header{
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,16 +62,16 @@ button:hover{
     padding-bottom: 1rem;
 }
 
-.modal-body p{
+.modal-body p {
     margin-bottom: 1rem;
 }
 
 .modal.hide,
-.fade.hide{
+.fade.hide {
     opacity: 0;
     pointer-events: none;
 }
 
-.modal.hide{
+.modal.hide {
     top: 0;
 }

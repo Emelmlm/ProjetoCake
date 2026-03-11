@@ -6,16 +6,7 @@
 
 const openModalButton = document.querySelectorAll(".open-modal");
 const closeModalButton = document.querySelectorAll(".close-modal");
-const modals = document.querySelectorAll(".modal");
-const fade = document.querySelectorAll(".fade");
-
-// const toggleModal = () => {
-//     [modal, fade].forEach((el) => el.classList.toggle("hide"));
-// };
-
-// [openModalButton, closeModalButton, fade].forEach((el) => {
-//     el.addEventListener("click", () => toggleModal());
-// });
+const fade = document.querySelector(".fade");
 
 openModalButton.forEach(button => {
     button.addEventListener("click", (event) => {
@@ -23,22 +14,30 @@ openModalButton.forEach(button => {
 
         const modalIndex = button.dataset.modalIndex;
         const modal = document.querySelector(`#modal${modalIndex}`);
-        modal.classList.toggle("hide");
-        fade.classList.toggle("hide");
 
+        if (modal && fade) {
+            modal.classList.remove("hide");
+            fade.classList.remove("hide");
+        }
     })
 })
+
+const closeModal = () => {
+    const activeModal = document.querySelector(".modal:not(.hide)");
+    if (activeModal) activeModal.classList.add("hide");
+    if (fade) fade.classList.add("hide");
+}
 
 closeModalButton.forEach(button => {
     button.addEventListener("click", (event) => {
         event.preventDefault();
-
-        const modal = event.currentTarget.closest(".modal");
-
-        if (modal) {
-            modal.classList.add("hide");
-            fade.classList.add("hide");
-        }
+        closeModal();
     })
 })
+
+if (fade) {
+    fade.addEventListener("click", () => {
+        closeModal();
+    })
+}
 

@@ -1,21 +1,59 @@
+/* Global Overlay Scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
 .topo {
     background-color: white;
     padding: 10px;
-    height: 15vh;
+    min-height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
     margin: 0 auto;
     border-bottom: 1px solid #cac8c8;
-    /* background-image: url("../img/imagemfundo.jpg");
-        background-position: 0 -100px; */
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        text-align: center;
+        height: auto;
+    }
 }
 
 .corpo {
     padding-block: 60px;
-    max-width: 80vw;
+    max-width: 90vw;
     margin: auto;
+
+    @media (max-width: 768px) {
+        padding-block: 30px;
+        max-width: 95vw;
+    }
 }
 
 .rodape {

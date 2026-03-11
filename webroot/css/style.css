@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap");
 
+
 @layer demo {
 
 	/* Config */
@@ -7,6 +8,10 @@
 		--slide-width: 36vmin;
 		--slide-height: calc(var(--slide-width) * 1.4);
 		--gap: 2rem;
+
+		@media (max-width: 768px) {
+			--slide-width: 70vmin;
+		}
 	}
 
 	/* Basic Carousel Styles */
@@ -28,9 +33,9 @@
 		scroll-behavior: smooth;
 	}
 
-	/* Estilo da barra de scroll para ficar mais elegante e próxima */
+	/* Estilo da barra de scroll do carrossel (já herdando o global, apenas ajustes finos) */
 	.slides::-webkit-scrollbar {
-		height: 8px;
+		height: 6px;
 	}
 
 	.slides::-webkit-scrollbar-track {

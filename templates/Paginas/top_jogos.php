@@ -3,8 +3,11 @@
 <?= $this->html->script("inicio", ["defer" => true]) ?>
 
 <main class="corpo">
-    <h1>Top 10 melhores jogos do mundo</h1>
+    <div class="titulo-wrapper">
+        <h1>Top 10 melhores jogos do mundo</h1>
+    </div>
     <p>Lista de melhores jogos da última decada na minha opnião</p>
+
     <ul class="container-jogos">
         <?php foreach ($games as $game) {  ?>
             <li>
@@ -12,6 +15,9 @@
                     <h2><?= $game->title ?></h2>
                 </a>
                 <p><?= $game->description ?></p>
+                <div class="img-game">
+                    <?= $this->Html->image($game->image ?$game->image :"MAGAGO.png", ["alt"=> "capa". $game->title]) ?>
+                </div>
             </li>
             <div id="" class="hide fade"></div>
             <div id="modal<?= $game->id?>" class="hide modal">
@@ -21,11 +27,9 @@
                 </div>
                 <div class="modal-body">
                     <p><?= $game->description ?></p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nemo quaerat porro maxime, aut cum voluptates earum asperiores minus vitae ipsam voluptatem sequi inventore, recusandae rerum sed corrupti obcaecati repellendus.</p>
                 </div>
             </div>
         <?php } ?>
-
 
 
         <!-- <?php foreach ($games as $game) { ?>
@@ -85,10 +89,22 @@
             <p>pq e muito legal tipo tem vários mini jogos em um jogao e ai da pra jogar com os amigos, por exemplo: steal a brainrot onde voce rouba varios tung tung sahurs</p>
         </li> -->
     </ul>
+    <div class="center-container">
+        <div class="loader">
+            <div class="pac-man"></div>
+            <div class="point p1"></div>
+            <div class="point p2"></div>
+            <div class="point p3"></div>
+            <div class="point p4"></div>
+            <div class="point p5"></div>
+        </div>
+    </div>
 
     <?= $this->html->link(
         $this->html->image("voltar.png", ["class" => "img-voltar"]),
         "/",
         ["class" => "link-voltar", "escape" => false]
     ) ?>
+
+    
 </main>
