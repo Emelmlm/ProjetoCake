@@ -9,24 +9,33 @@
     <p>Lista de melhores jogos da última decada na minha opnião</p>
 
     <ul class="container-jogos">
-        <?php foreach ($games as $game) {  ?>
-            <li>
-                <a class="open-modal" data-modal-index="<?= $game->id?>">
-                    <h2><?= $game->title ?></h2>
-                </a>
-                <p><?= $game->description ?></p>
-                <div class="img-game">
-                    <?= $this->Html->image($game->image ?$game->image :"MAGAGO.png", ["alt"=> "capa". $game->title]) ?>
+        <?php foreach ($games as $index => $game) {
+            $rank = $index + 1;
+            $rankClass = $rank <= 3 ? "top-$rank" : "standard-rank";
+        ?>
+            <li class="game-card open-modal" data-modal-index="<?= $game->id ?>">
+                <div class="rank-badge <?= $rankClass ?>"><?= $rank ?></div>
+                <div class="game-content">
+                    <div class="img-game">
+                        <?= $this->Html->image($game->image ? $game->image : "MAGAGO.png", ["alt" => "capa " . $game->title]) ?>
+                    </div>
+                    <div class="game-info">
+                        <h2><?= $game->title ?></h2>
+                        <p class="game-description"><?= $game->description ?></p>
+                    </div>
                 </div>
             </li>
             <div id="" class="hide fade"></div>
-            <div id="modal<?= $game->id?>" class="hide modal">
+            <div id="modal<?= $game->id ?>" class="hide modal">
                 <div class="modal-header">
                     <h2><?= $game->title ?></h2>
                     <button class="close-modal">Fechar</button>
                 </div>
                 <div class="modal-body">
                     <p><?= $game->description ?></p>
+                    <div class="modal-img">
+                        <?= $this->Html->image($game->image ? $game->image : "MAGAGO.png", ["alt" => "capa " . $game->title]) ?>
+                    </div>
                 </div>
             </div>
         <?php } ?>

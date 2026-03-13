@@ -2,7 +2,7 @@
 <?= $this->html->script("inicio") ?>
 
 <main class="corpo">
-    <h1>Minhas músicas favoritas</h1>
+    <h1 class="titulo-wrapper">Minhas músicas favoritas</h1>
     <ul class="lista-musica">
         <?php foreach($songs as $song): ?>
             <li class="item-musica">
